@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { CurrentUserResponse } from "../../services/auth";
-import Avatar from "@/assets/avatar.svg";
+import avatar from "@/assets/avatar.svg?url";
 
 interface MyProfileProps {
   user: CurrentUserResponse;
@@ -27,7 +27,7 @@ const MyProfile: React.FC<MyProfileProps> = ({ user }) => {
         </Typography>
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           <img
-            src={user.profile_pic || Avatar}
+            src={user.profile_pic || avatar}
             alt={user.name}
             style={{
               width: 450,
