@@ -40,7 +40,7 @@ const MyProfile: React.FC<MyProfileProps> = ({ user }) => {
             <InfoItem label="Email" value={user.email} />
             <InfoItem
               label="Phone"
-              value={(user.phone as unknown as string) || "0821XXXXXXX"}
+              value={(user.phone as unknown as string) || "082112XXXXX"}
             />
             <InfoItem label="Gender" value={user.gender || "Male"} />
             <InfoItem
