@@ -112,7 +112,6 @@ const LoginForm = () => {
           disabled={loading}
         >
           {loading ? "Logging in..." : "Login"}
-          Login
         </Button>
       </Box>
     </Box>
