@@ -7,7 +7,7 @@ import useStore from "../../store/hooks";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, loading } = useAuth();
+  const { login } = useAuth();
   const { isAdmin, isLogin } = useStore();
   const navigate = useNavigate();
 
@@ -109,9 +109,10 @@ const LoginForm = () => {
             alignItems: "center",
           }}
           type="submit"
-          disabled={loading}
+          // disabled={loading}
         >
-          {loading ? "Logging in..." : "Login"}
+          {/* {loading ? "Logging in..." : "Login"} */}
+          Login
         </Button>
       </Box>
     </Box>
