@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { CurrentUserResponse } from "../../services/auth";
-import Avatar from "@/assets/avatar.svg";
+import Avatar from "../../assets/avatar.svg";
 
 interface MyProfileProps {
   user: CurrentUserResponse;
