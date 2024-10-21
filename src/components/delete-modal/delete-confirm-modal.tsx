@@ -7,17 +7,17 @@ interface DeleteConfirmationModalProps {
   onConfirm: () => void;
 }
 
-const ModalBox = styled(Box)({
+const ModalBox = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 500,
   backgroundColor: "#FFFFFF",
-  boxShadow: 24,
-  p: 5,
-  borderRadius: 3,
-});
+  boxShadow: theme.shadows[24],
+  padding: theme.spacing(5),
+  borderRadius: theme.shape.borderRadius,
+}));
 
 const ActionButton = styled(Button)({
   color: "#FFFFFF",
@@ -51,7 +51,7 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({
 }) => {
   return (
     <Modal open={open} onClose={onClose}>
-      <ModalBox padding={2}>
+      <ModalBox>
         <Typography
           variant="h6"
           component="h2"

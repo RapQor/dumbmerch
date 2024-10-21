@@ -164,7 +164,7 @@ const EditProduct: React.FC = () => {
     event?: React.SyntheticEvent | Event,
     reason?: string
   ) => {
-    if (reason === "clickaway") {
+    if (reason === "clickaway" || event?.type === "EscapeKeyDown") {
       return;
     }
     setOpen(false);
@@ -200,17 +200,17 @@ const EditProduct: React.FC = () => {
           marginBottom={2}
           alignItems={"center"}
         >
-          <UploadButton variant="contained" component="label">
-            Upload Image
-            <input
-              type="file"
-              hidden
-              onChange={
-                handleFileChange ||
-                products.find((prd) => prd.id === Number(id))?.productPicture
-              }
-              accept="image/*"
-            />
+          <UploadButton variant="contained">
+            <label htmlFor="upload-image">
+              Upload Image
+              <input
+                id="upload-image"
+                type="file"
+                hidden
+                onChange={handleFileChange}
+                accept="image/*"
+              />
+            </label>
           </UploadButton>
           {fileName && <Typography color="white">{fileName}</Typography>}
         </Box>
